@@ -1,0 +1,13 @@
+<!-- form.html -->
+<form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <label for="name">{{ form.name.label }}</label>
+    {{ form.name(size=20) }} <br>
+    <label for="email">{{ form.email.label }}</label>
+    {{ form.email(size=20) }} <br>
+    {{ form.submit() }}
+</form>
+
+{% for field, error in form.errors.items() %}
+    <div class="error">{{ error|join(', ') }}</div>
+{% endfor %}
